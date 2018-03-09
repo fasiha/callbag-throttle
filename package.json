@@ -1,6 +1,6 @@
 {
   "name": "callbag-throttle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Throttle operator for callbags, enforcing a cooldown quiet time between emissions",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,6 @@
   "homepage": "https://github.com/fasiha/callbag-throttle#readme",
   "devDependencies": {
     "callbag-basics": "^2.0.1",
-    "callbag-mock": "^1.0.0",
     "tape": "^4.9.0"
   }
 }
