@@ -28,3 +28,7 @@ const throttle = require('callbag-throttle');
 ```
 
 ## API
+With `const throttle = require('callbag-throttle')`, insert the following operator between a source and a sink to make the source a throttled listenable, i.e., a source that enforces a delay (in milliseconds) between data. Even the termination signal from the original source is throttled (is that ok?).
+```js
+throttle(delayMilliseconds)
+```
