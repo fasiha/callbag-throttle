@@ -1,6 +1,6 @@
 {
   "name": "callbag-throttle",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Throttle operator for callbags, enforcing a cooldown quiet time between emissions",
   "main": "index.js",
   "scripts": {
