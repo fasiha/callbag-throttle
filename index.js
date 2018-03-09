@@ -1,3 +1,4 @@
+"use strict";
 
 // Recall how this is used (skip this if you know Haskell's calling patterns):
 // - `throttle(100)` is a function that accepts a source callbag.
@@ -99,17 +100,17 @@ const throttle = milliseconds => source => (start, sink) => {
 
 module.exports = throttle;
 
-const { forEach, fromIter, interval, map, filter, take, pipe } = require('callbag-basics');
+// const { forEach, fromIter, interval, map, filter, take, pipe } = require('callbag-basics');
 
-// let bag1 = pipe(interval(100), map(x => x + 1), filter(x => x % 2), take(5), forEach(x => console.log('x', x)));
-// let bag2 = pipe(interval(100), map(x => x + 1), filter(x => x % 2), take(5), throttle(50),
+// let bag1 = pipe(interval(100), take(5), forEach(x => console.log('x', x)));
+// let bag2 = pipe(interval(100), take(5), throttle(50),
 //     forEach(x => console.log('forEach50', x)));
-// let bag3 = pipe(interval(100), map(x => x + 1), filter(x => x % 2), take(5), throttle(850),
+// let bag3 = pipe(interval(100), take(5), throttle(850),
 //     forEach(x => console.log('major throttle', x)));
 
-function* gen() {
-  for (let i = 0; i < 6; i++) { yield i + .5; }
-}
-let genbag1 = pipe(fromIter(gen()), forEach(x => console.log('x', x)));
-// let genbag2 = pipe(fromIter(gen()), throttle(50), forEach(x => console.log('x barely', x)));
-let genbag2 = pipe(fromIter(gen()), throttle(850), forEach(x => console.log('x HEAVY', x)));
+// function* gen() {
+//   for (let i = 0; i < 6; i++) { yield i + .5; }
+// }
+// let genbag1 = pipe(fromIter(gen()), forEach(x => console.log('x', x)));
+// // let genbag2 = pipe(fromIter(gen()), throttle(50), forEach(x => console.log('x barely', x)));
+// let genbag2 = pipe(fromIter(gen()), throttle(850), forEach(x => console.log('x HEAVY', x)));
